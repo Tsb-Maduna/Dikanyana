@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang = "en">
+	<head>
+		<meta charset = "utf-8"/>
+		<meta name = "viewport" content = "width = device-width, initial-scale = 1.0"/>
+		<title> Dikanyana - Home </title>
+		<link rel = "stylesheet" href = "js/bootstrap.js">
+		<link rel = "stylesheet" href = "css/bootstrap.min.css">
+		<!-- Theme style -->
+		<style>
+			body[data-bs-theme="dark"] {
+				background-color: #1E293B;
+				color: #F3F4F6;
+			}
+			body[data-bs-theme="light"] {
+				background-color: #F8FAFC;
+				color: #111827;
+			}
+		</style>
+	</head>
+	<body class = "container d-flex flex-column min-vh-100" style = "padding-top : 70px;">
+		<!-- Navbar -->
+		<nav class = "navbar navbar-expand-lg fixed-top">
+			<div class = "container">
+				<!-- Brand -->
+				<a class = "navbar-brand" href = "index.html">DIKANYANA</a>
+				
+				<!-- Toggler button -->
+				<button class = "navbar-toggler" type = "button" data-bs-toggle = "collapse" data-bs-target = "#navbarNav" aria-controls = "navbarNav" aria-expanded = "false" aria-label = "Toggle navigation">
+					<span class = "navbar-toggler-icon"></span>
+				</button>
+				
+				<!-- Navbar links -->
+				<div class = "collapse navbar-collapse" id = "navbarNav">
+					<ul class = "navbar-nav ms-auto">
+						<li class = "nav-item">
+							<a class = "nav-link active" aria-current = "page" href = "index.html"> Home </a>
+						</li>
+						<li class = "nav-item">
+							<a class = "nav-link" href = "about.html"> About </a>
+						</li>
+						<li class = "nav-item">
+							<a class = "nav-link" href = "services.html"> Services </a>
+						</li>
+						<li class = "nav-item">
+							<a class = "nav-link" href = "covers.html"> Covers </a>
+						</li>
+						<li class = "nav-item">
+							<a class = "nav-link" href = "resources.html"> Resources </a>
+						</li>
+						<li class = "nav-item">
+							<a class = "nav-link" href = "contact.html"> Contact </a>
+						</li>
+						<!-- Theme Toggle Button -->
+						<li class="nav-item">
+							<button id="themeToggle" class="btn btn-outline-secondary ms-3">🌙 Dark Mode</button>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</nav>
+		<div class = "container d-flex flex-column justify-content-center align-items-center text-center flex-grow-1">
+			<h1 class = "mb-3"><em>Dikanyana Funeral Parlour</em></h1>
+			<h4 class = "mb-4 text-muted"><em> “Honoring Lives with Dignity and Care”</em></h4>
+			<p class = "lead">
+				Welcome to <em>DIKANYANA FUNERAL PARLOUR</em>. 
+				We are here to guide and support you through life’s most challenging moments with compassion, dignity, and care. 
+				Our experienced team is committed to helping families honor their loved ones with meaningful, personalized funeral services.
+			</p>
+			<p class = "lead">
+				At <em>DIKANYANA FUNERAL PARLOUR</em>, we understand that every family’s needs are unique. 
+				From funeral planning to memorial services, we offer guidance and support to ensure your loved one’s life is celebrated with respect and compassion.
+			</p>
+			<a href = "projects.html" class = "btn btn-primary mt-3">Contact Us</a>
+		</div>
+		<footer class = "text-center">
+			&copy; 2025 Dikanyana Funeral Parlour. All rights reserved.
+		</footer>
+		
+		<script src = "js/bootstrap.bundle.min.js"></script>
+		<script>
+			const toggleBtn = document.getElementById("themeToggle");
+			const body = document.body;
+
+			// Load saved theme or default to light
+			const savedTheme = localStorage.getItem("theme") || "light";
+			body.setAttribute("data-bs-theme", savedTheme);
+			updateButton(savedTheme);
+
+			// Handle toggle
+			toggleBtn.addEventListener("click", () => {
+				let currentTheme = body.getAttribute("data-bs-theme");
+				let newTheme = currentTheme === "light" ? "dark" : "light";
+				body.setAttribute("data-bs-theme", newTheme);
+				localStorage.setItem("theme", newTheme);
+				updateButton(newTheme);
+			});
+
+			// Update button text and style
+			function updateButton(theme) {
+			if (theme === "dark") {
+				toggleBtn.textContent = "☀️ Light Mode";
+				toggleBtn.classList.replace("btn-outline-secondary", "btn-light");
+			} else {
+				toggleBtn.textContent = "🌙 Dark Mode";
+				toggleBtn.classList.replace("btn-light", "btn-outline-secondary");
+			}
+  }
+		</script>
+	</body>
+</html>
