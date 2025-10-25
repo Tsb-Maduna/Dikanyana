@@ -3,7 +3,7 @@
 	<head>
 		<meta charset = "utf-8"/>
 		<meta name = "viewport" content = "width = device-width, initial-scale = 1.0"/>
-		<title> Dikanyana - Home </title>
+		<title> Dikanyana - Contact Us </title>
 		<link rel = "stylesheet" href = "js/bootstrap.js">
 		<link rel = "stylesheet" href = "css/bootstrap.min.css">
 		<!-- Theme style -->
@@ -16,11 +16,29 @@
 				background-color: #F8FAFC;
 				color: #111827;
 			}
+			
+			  body {
+				background-color: #f8f9fa;
+			  }
+
+			  .card {
+				border-radius: 12px;
+			  }
+
+			  .btn-primary {
+				background: #007bff;
+				border: none;
+			  }
+
+			  .btn-primary:hover {
+				background: #0056b3;
+			  }
+			
 		</style>
 	</head>
 	<body class = "container d-flex flex-column min-vh-100" style = "padding-top : 70px;">
 		<!-- Navbar -->
-		<nav class = "navbar navbar-expand-lg fixed-top">
+		<nav class = "navbar navbar-expand-lg bg-body-tertiary fixed-top">
 			<div class = "container">
 				<!-- Brand -->
 				<a class = "navbar-brand" href = "index.html">DIKANYANA</a>
@@ -34,7 +52,7 @@
 				<div class = "collapse navbar-collapse" id = "navbarNav">
 					<ul class = "navbar-nav ms-auto">
 						<li class = "nav-item">
-							<a class = "nav-link active" aria-current = "page" href = "index.html"> Home </a>
+							<a class = "nav-link" href = "index.html"> Home </a>
 						</li>
 						<li class = "nav-item">
 							<a class = "nav-link" href = "about.html"> About </a>
@@ -49,7 +67,7 @@
 							<a class = "nav-link" href = "resources.html"> Resources </a>
 						</li>
 						<li class = "nav-item">
-							<a class = "nav-link" href = "contact.html"> Contact </a>
+							<a class = "nav-link active" aria-current = "page" href = "contact.html"> Contact </a>
 						</li>
 						<li class = "nav-item">
 							<a class = "nav-link" href = "join.html"> Join </a>
@@ -63,18 +81,45 @@
 			</div>
 		</nav>
 		<div class = "container d-flex flex-column justify-content-center align-items-center text-center flex-grow-1">
-			<h1 class = "mb-3"><em>Dikanyana Funeral Parlour</em></h1>
-			<h4 class = "mb-4 text-muted"><em> “Honoring Lives with Dignity and Care”</em></h4>
-			<p class = "lead">
-				Welcome to <em>DIKANYANA FUNERAL PARLOUR</em>. 
-				We are here to guide and support you through life’s most challenging moments with compassion, dignity, and care. 
-				Our experienced team is committed to helping families honor their loved ones with meaningful, personalized funeral services.
-			</p>
-			<p class = "lead">
-				At <em>DIKANYANA FUNERAL PARLOUR</em>, we understand that every family’s needs are unique. 
-				From funeral planning to memorial services, we offer guidance and support to ensure your loved one’s life is celebrated with respect and compassion.
-			</p>
-			<a href = "join.html" class = "btn btn-primary mt-3">Join Now!</a>
+			<div class = "col-lg-8 col-md-10">
+				<div class = "card shadow-sm border-0">
+					<div class = "card-body p-4" >
+						<h3 class="text-center mb-4"> Contact Us </h3>
+						<form action="https://formspree.io/f/xblprvpa" method="POST">
+							<div class = "mb-3">
+								<label for="name" class="form-label">Full Name</label>
+									<input type="text" class="form-control" id="name" name="name" placeholder="Enter your name" required />
+							</div>
+							<div class = "mb-3">
+								<label for "email" class="form-label"> Email address </label>
+									<input
+										type="email"
+										class="form-control"
+										id="email"
+										name="_replyto"
+										placeholder="Enter your email"
+										required/>								
+							</div>
+							<div class="mb-3">
+								<label for="message" class="form-label">Message</label>
+									<textarea
+										class = "form-control"
+										id="message"
+										name="message"
+										rows="5"
+										placeholder="Write your message here..."
+										required				
+									></textarea>
+							</div>
+							<div class = "d-grid">
+								<button type="submit" class="btn btn-primary">
+									Send Message
+								</button>
+							</div>
+						</form>
+					</div>
+				</div>
+			</div>
 		</div>
 		<footer class = "text-center">
 			&copy; 2025 Dikanyana Funeral Parlour. All rights reserved.
@@ -101,14 +146,14 @@
 
 			// Update button text and style
 			function updateButton(theme) {
-			if (theme === "dark") {
-				toggleBtn.textContent = "☀️ Light Mode";
-				toggleBtn.classList.replace("btn-outline-secondary", "btn-light");
-			} else {
-				toggleBtn.textContent = "🌙 Dark Mode";
-				toggleBtn.classList.replace("btn-light", "btn-outline-secondary");
+				if (theme === "dark") {
+					toggleBtn.textContent = "☀️ Light Mode";
+					toggleBtn.classList.replace("btn-outline-secondary", "btn-light");
+				} else {
+					toggleBtn.textContent = "🌙 Dark Mode";
+					toggleBtn.classList.replace("btn-light", "btn-outline-secondary");
+				}
 			}
-  }
 		</script>
 	</body>
 </html>
